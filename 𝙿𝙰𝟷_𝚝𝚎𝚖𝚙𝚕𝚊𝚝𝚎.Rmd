@@ -5,10 +5,11 @@ date: "1/28/2017"
 output:
   html_document: default
 ---
-
 ### Loading and preprocessing the data
 
-```{r load}
+```{r}
+library(knitr)
+opts_chunk$set(base.dir = "~/RepData_PeerAssessment1/")
 download.file("https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip", 
               destfile = "activity.zip")
 unzip("activity.zip")
@@ -16,7 +17,7 @@ activity <- read.csv("activity.csv")
 ```
 
 - What is mean total number of steps taken per day?
-```{r central distribution}
+```{r}
 library(tidyverse)
 StepsPerDay <- summarize(group_by(activity,date),
                          total = sum(steps),na.rm = TRUE)

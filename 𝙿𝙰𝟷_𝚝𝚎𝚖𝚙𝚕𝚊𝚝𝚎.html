@@ -125,7 +125,9 @@ $(document).ready(function () {
 
 <div id="loading-and-preprocessing-the-data" class="section level3">
 <h3>Loading and preprocessing the data</h3>
-<pre class="r"><code>download.file(&quot;https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip&quot;, 
+<pre class="r"><code>library(knitr)
+opts_chunk$set(base.dir = &quot;~/RepData_PeerAssessment1/&quot;)
+download.file(&quot;https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip&quot;, 
               destfile = &quot;activity.zip&quot;)
 unzip(&quot;activity.zip&quot;)
 activity &lt;- read.csv(&quot;activity.csv&quot;)</code></pre>
